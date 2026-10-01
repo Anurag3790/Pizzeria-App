@@ -4,6 +4,8 @@ An Angular 19 (standalone components + signals) implementation of the Pizzeria
 capstone brief: browse pizzas, build a custom one, manage a cart, and check out
 with an accurate, validated bill.
 
+Project live link : https://pizzeriaapp-gamma.vercel.app/home
+
 ## Getting started
 
 ```bash
