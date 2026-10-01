@@ -1,0 +1,82 @@
+<section class="build-page container">
+  <header class="page-head">
+    <h1>Build Ur Pizza</h1>
+    <p>Pizzeria now gives you options to build your own pizza. Customize your pizza by choosing ingredients from the list below.</p>
+  </header>
+
+  @if (loading()) {
+    <div class="state-msg">Loading ingredients…</div>
+  } @else if (loadError()) {
+    <div class="state-msg error">Couldn't load ingredients right now. Please refresh and try again.</div>
+  } @else {
+    <div class="build-layout">
+      <div class="ingredient-list" role="group" aria-label="Choose your ingredients">
+        <div class="ingredient-head">
+          <span></span>
+          <span>Ingredient</span>
+          <span>Price</span>
+          <span class="col-select">Select</span>
+        </div>
+
+        @for (ing of ingredients(); track ing.id) {
+          <div class="ingredient-row" [class.selected]="isSelected(ing.id)">
+            <img [src]="ing.image" [alt]="ing.tname" loading="lazy" />
+            <span class="ing-name">{{ ing.tname }}</span>
+            <span class="ing-price">{{ ing.price | currency: 'INR' : 'symbol' : '1.2-2' }}</span>
+            <span class="col-select">
+              <input
+                type="checkbox"
+                [id]="'ing-' + ing.id"
+                [checked]="isSelected(ing.id)"
+                (change)="toggle(ing.id)"
+                [attr.aria-label]="'Select ' + ing.tname"
+              />
+              <button type="button" class="add-link" (click)="toggle(ing.id)">
+                {{ isSelected(ing.id) ? 'Remove' : 'Add' }}
+              </button>
+            </span>
+          </div>
+        }
+      </div>
+
+      <aside class="pizza-preview">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="94" fill="var(--color-primary)" />
+          <circle cx="100" cy="100" r="80" fill="#fff8ef" />
+          <circle cx="100" cy="100" r="68" fill="#f5c66b" />
+          @for (dot of toppingDots(); track dot.id) {
+            <circle [attr.cx]="dot.x" [attr.cy]="dot.y" r="7" [attr.fill]="dot.color" />
+          }
+        </svg>
+
+        @if (selectedIngredients().length === 0) {
+          <p class="preview-hint">Check a few ingredients to start building your pizza.</p>
+        } @else {
+          <ul class="chosen-list">
+            @for (t of selectedIngredients(); track t.id) {
+              <li>{{ t.tname }}</li>
+            }
+          </ul>
+        }
+
+        <div class="total-row">
+          <span>Total Cost</span>
+          <strong>{{ totalCost() | currency: 'INR' : 'symbol' : '1.2-2' }}</strong>
+        </div>
+
+        <button
+          class="btn btn-primary build-btn"
+          type="button"
+          [disabled]="selectedIngredients().length === 0"
+          (click)="buildPizza()"
+        >
+          @if (justBuilt()) {
+            Added to cart ✓
+          } @else {
+            Build Ur Pizza
+          }
+        </button>
+      </aside>
+    </div>
+  }
+</section>

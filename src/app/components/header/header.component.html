@@ -1,0 +1,36 @@
+<header class="site-header">
+  <div class="header-inner container">
+    <a class="brand" routerLink="/home" aria-label="Pizzeria, go to home page">
+      <img class="brand-mark" src="images/pizzeria-logo.png" alt="" width="40" height="40" />
+      <span class="brand-name">Pizzeria</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      (click)="menuOpen = !menuOpen"
+      [attr.aria-expanded]="menuOpen"
+      aria-controls="primary-nav"
+      aria-label="Toggle navigation menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="primary-nav" [class.open]="menuOpen" aria-label="Primary">
+      <a routerLink="/order-pizza" routerLinkActive="active" (click)="menuOpen = false">Order Pizza</a>
+      <a routerLink="/build-pizza" routerLinkActive="active" (click)="menuOpen = false">Build Ur Pizza</a>
+    </nav>
+
+    <a class="cart-btn btn btn-primary" routerLink="/cart" aria-label="View shopping cart">
+      <svg class="cart-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="19" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path>
+      </svg>
+      <span class="cart-label">Shopping Cart</span>
+      @if (cart.itemCount() > 0) {
+        <span class="cart-badge">{{ cart.itemCount() }}</span>
+      }
+    </a>
+  </div>
+</header>

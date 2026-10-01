@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ultimate Chicken">
+  <rect width="400" height="300" fill="#fff8ef" />
+  <circle cx="200" cy="150" r="92" fill="#e8590c" />
+  <circle cx="200" cy="150" r="78" fill="#fffaf2" />
+  <circle cx="200" cy="150" r="66" fill="#f5c66b" />
+  <circle cx="214.6" cy="123.0" r="8" fill="#c0392b" /><circle cx="244.4" cy="144.2" r="9" fill="#7fa650" /><circle cx="213.2" cy="160.1" r="9" fill="#e07a5f" /><circle cx="213.8" cy="140.5" r="9" fill="#e07a5f" /><circle cx="227.6" cy="169.0" r="6" fill="#e07a5f" />
+  <rect x="60" y="248" width="280" height="30" rx="15" fill="rgba(28,26,25,0.72)" />
+  <text x="200" y="268" font-family="Poppins, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Ultimate Chicken</text>
+</svg>

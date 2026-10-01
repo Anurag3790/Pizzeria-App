@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tripple Chicken Feast">
+  <rect width="400" height="300" fill="#fff8ef" />
+  <circle cx="200" cy="150" r="92" fill="#e8590c" />
+  <circle cx="200" cy="150" r="78" fill="#fffaf2" />
+  <circle cx="200" cy="150" r="66" fill="#f5c66b" />
+  <circle cx="170.5" cy="133.1" r="9" fill="#a04000" /><circle cx="215.8" cy="123.5" r="7" fill="#e07a5f" /><circle cx="185.6" cy="141.1" r="6" fill="#c0392b" /><circle cx="251.4" cy="136.3" r="7" fill="#8d5524" /><circle cx="227.0" cy="148.8" r="6" fill="#a04000" /><circle cx="218.0" cy="149.7" r="9" fill="#e07a5f" /><circle cx="200.8" cy="186.9" r="7" fill="#e07a5f" />
+  <rect x="60" y="248" width="280" height="30" rx="15" fill="rgba(28,26,25,0.72)" />
+  <text x="200" y="268" font-family="Poppins, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Tripple Chicken Feast</text>
+</svg>

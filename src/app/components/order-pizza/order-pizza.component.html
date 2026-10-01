@@ -1,0 +1,53 @@
+<section class="order-page container">
+  <header class="page-head">
+    <h1>Order Pizza</h1>
+    <p>Choose from our most-loved wood-fired pizzas.</p>
+  </header>
+
+  @if (loading()) {
+    <div class="state-msg">Loading menu…</div>
+  } @else if (loadError()) {
+    <div class="state-msg error">Couldn't load the menu right now. Please refresh and try again.</div>
+  } @else if (pizzas().length === 0) {
+    <div class="state-msg">No pizzas are available right now.</div>
+  } @else {
+    <div class="pizza-grid">
+      @for (pizza of pizzas(); track pizza.id) {
+        <article class="pizza-card">
+          <img [src]="pizza.image" [alt]="pizza.name" loading="lazy" />
+          <div class="pizza-body">
+            <div class="pizza-title-row">
+              <h2>{{ pizza.name }}</h2>
+              <span
+                class="type-dot"
+                [class.veg]="pizza.type === 'veg'"
+                [class.nonveg]="pizza.type === 'nonveg'"
+                [attr.aria-label]="pizza.type === 'veg' ? 'Vegetarian' : 'Non-vegetarian'"
+                [title]="pizza.type === 'veg' ? 'Vegetarian' : 'Non-vegetarian'"
+              ></span>
+            </div>
+            <p class="desc">{{ pizza.description }}</p>
+            <p class="meta"><strong>Ingredients:</strong> {{ pizza.ingredients.join(', ') }}</p>
+            <p class="meta"><strong>Toppings:</strong> {{ pizza.topping.join(', ') }}</p>
+            <div class="pizza-footer">
+              <span class="price">{{ priceOf(pizza) | currency: 'INR' : 'symbol' : '1.2-2' }}</span>
+              <button
+                class="btn"
+                [class.btn-primary]="addedId() !== pizza.id"
+                [class.btn-added]="addedId() === pizza.id"
+                type="button"
+                (click)="addToCart(pizza)"
+              >
+                @if (addedId() === pizza.id) {
+                  Added ✓
+                } @else {
+                  Add to Cart
+                }
+              </button>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  }
+</section>

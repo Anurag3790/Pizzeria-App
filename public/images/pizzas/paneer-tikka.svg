@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Paneer Tikka">
+  <rect width="400" height="300" fill="#fff8ef" />
+  <circle cx="200" cy="150" r="92" fill="#e8590c" />
+  <circle cx="200" cy="150" r="78" fill="#fffaf2" />
+  <circle cx="200" cy="150" r="66" fill="#f5c66b" />
+  <circle cx="232.6" cy="162.5" r="7" fill="#7fa650" /><circle cx="240.1" cy="120.4" r="6" fill="#8d5524" /><circle cx="201.9" cy="164.7" r="9" fill="#8d5524" /><circle cx="196.9" cy="164.5" r="6" fill="#8d5524" /><circle cx="245.3" cy="125.9" r="7" fill="#f2c14e" /><circle cx="165.5" cy="126.3" r="8" fill="#c0392b" />
+  <rect x="60" y="248" width="280" height="30" rx="15" fill="rgba(28,26,25,0.72)" />
+  <text x="200" y="268" font-family="Poppins, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Paneer Tikka</text>
+</svg>

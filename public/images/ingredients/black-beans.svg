@@ -1,0 +1,5 @@
+<svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Black beans">
+  <circle cx="80" cy="80" r="78" fill="#ca6f1e" />
+  <circle cx="80" cy="80" r="78" fill="none" stroke="#fff" stroke-width="3" opacity="0.35" />
+  <text x="80" y="96" font-family="Poppins, Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">BB</text>
+</svg>

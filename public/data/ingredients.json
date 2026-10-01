@@ -1,0 +1,80 @@
+[
+  {
+    "id": 101,
+    "tname": "Pepperoni",
+    "price": 110,
+    "image": "https://image.shutterstock.com/image-photo/organic-dry-beef-pepperoni-slices-260nw-2216064413.jpg"
+  },
+  {
+    "id": 102,
+    "tname": "Mushroom",
+    "price": 35,
+    "image": "https://image.shutterstock.com/image-photo/wooden-bowl-champignons-isolated-on-260nw-1840802683.jpg"
+  },
+  {
+    "id": 103,
+    "tname": "Black beans",
+    "price": 45,
+    "image": "https://image.shutterstock.com/image-photo/black-bean-on-wooden-spoon-260nw-2653236785.jpg"
+  },
+  {
+    "id": 104,
+    "tname": "Black olive",
+    "price": 50,
+    "image": "https://image.shutterstock.com/image-photo/cut-fresh-black-olives-on-260nw-2011631990.jpg"
+  },
+  {
+    "id": 105,
+    "tname": "Green olive",
+    "price": 50,
+    "image": "https://image.shutterstock.com/image-photo/green-olives-slices-flying-close-260nw-2281343739.jpg"
+  },
+  {
+    "id": 106,
+    "tname": "Jalapeno",
+    "price": 45,
+    "image": "https://image.shutterstock.com/image-photo/jalapeno-peppers-isolated-on-white-260nw-1870016287.jpg"
+  },
+  {
+    "id": 107,
+    "tname": "Chicken",
+    "price": 60,
+    "image": "https://image.shutterstock.com/image-photo/chicken-wing-raw-meat-herbs-260nw-2567378987.jpg"
+  },
+  {
+    "id": 108,
+    "tname": "Tomato",
+    "price": 20,
+    "image": "https://image.shutterstock.com/image-photo/fresh-tomatoes-isolated-on-white-260nw-2707066419.jpg"
+  },
+  {
+    "id": 109,
+    "tname": "Red paprika",
+    "price": 30,
+    "image": "https://image.shutterstock.com/image-photo/chili-pepper-isolated-on-white-260nw-2706851119.jpg"
+  },
+  {
+    "id": 110,
+    "tname": "Paneer",
+    "price": 45,
+    "image": "https://image.shutterstock.com/image-photo/home-made-cottage-cheese-known-260nw-1800581245.jpg"
+  },
+  {
+    "id": 111,
+    "tname": "Fried Onion",
+    "price": 18,
+    "image": "https://image.shutterstock.com/image-photo/fried-onion-rings-crispy-battered-260nw-2741517797.jpg"
+  },
+  {
+    "id": 112,
+    "tname": "Capsicum",
+    "price": 15,
+    "image": "https://image.shutterstock.com/image-photo/red-yellow-sweet-bell-pepper-260nw-2512599659.jpg"
+  },
+  {
+    "id": 113,
+    "tname": "Sweet corn",
+    "price": 38,
+    "image": "https://image.shutterstock.com/image-photo/corn-seeds-wood-bowl-isolated-260nw-2468137747.jpg"
+  }
+]

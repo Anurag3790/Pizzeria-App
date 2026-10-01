@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Veggie Supreme">
+  <rect width="400" height="300" fill="#fff8ef" />
+  <circle cx="200" cy="150" r="92" fill="#e8590c" />
+  <circle cx="200" cy="150" r="78" fill="#fffaf2" />
+  <circle cx="200" cy="150" r="66" fill="#f5c66b" />
+  <circle cx="175.0" cy="171.2" r="8" fill="#f2c14e" /><circle cx="191.3" cy="137.1" r="9" fill="#c0392b" /><circle cx="252.2" cy="138.5" r="6" fill="#f2c14e" /><circle cx="155.0" cy="151.3" r="7" fill="#7fa650" /><circle cx="224.9" cy="141.3" r="6" fill="#7fa650" /><circle cx="200.9" cy="164.7" r="7" fill="#7fa650" /><circle cx="210.3" cy="162.1" r="7" fill="#a04000" />
+  <rect x="60" y="248" width="280" height="30" rx="15" fill="rgba(28,26,25,0.72)" />
+  <text x="200" y="268" font-family="Poppins, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Veggie Supreme</text>
+</svg>

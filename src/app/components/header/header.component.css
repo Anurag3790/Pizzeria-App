@@ -1,0 +1,163 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-header);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+  border-radius: var(--radius-sm);
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #fff;
+  letter-spacing: 0.2px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.main-nav a {
+  color: #cfc9c2;
+  font-weight: 500;
+  font-size: 0.97rem;
+  padding: 8px 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.main-nav a:hover {
+  color: #fff;
+}
+
+.main-nav a.active {
+  color: #fff;
+  border-bottom-color: var(--color-primary);
+}
+
+.cart-btn {
+  position: relative;
+  padding: 10px 18px;
+  font-size: 0.92rem;
+  flex-shrink: 0;
+}
+
+.cart-icon {
+  width: 17px;
+  height: 17px;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  background: var(--color-header);
+  color: #fff;
+  border: 2px solid var(--color-primary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    gap: 14px;
+  }
+
+  .nav-toggle {
+    display: flex;
+    order: 2;
+  }
+
+  .cart-label {
+    display: none;
+  }
+
+  .cart-btn {
+    order: 3;
+    padding: 10px 12px;
+  }
+
+  .main-nav {
+    order: 4;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background: var(--color-header);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease;
+  }
+
+  .main-nav.open {
+    max-height: 200px;
+  }
+
+  .main-nav a {
+    padding: 14px 24px;
+    border-bottom: 1px solid #33302e;
+  }
+
+  .main-nav a.active {
+    border-bottom: 1px solid var(--color-primary);
+    background: #262220;
+  }
+}

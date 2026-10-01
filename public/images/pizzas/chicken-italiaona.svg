@@ -1,0 +1,9 @@
+<svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chicken Italiaona">
+  <rect width="400" height="300" fill="#fff8ef" />
+  <circle cx="200" cy="150" r="92" fill="#e8590c" />
+  <circle cx="200" cy="150" r="78" fill="#fffaf2" />
+  <circle cx="200" cy="150" r="66" fill="#f5c66b" />
+  <circle cx="216.2" cy="167.7" r="7" fill="#a04000" /><circle cx="214.0" cy="140.7" r="9" fill="#e07a5f" /><circle cx="164.1" cy="152.6" r="6" fill="#7fa650" /><circle cx="183.9" cy="184.4" r="9" fill="#7fa650" /><circle cx="252.6" cy="160.0" r="9" fill="#f2c14e" /><circle cx="238.8" cy="119.2" r="9" fill="#e07a5f" /><circle cx="235.8" cy="146.9" r="7" fill="#a04000" />
+  <rect x="60" y="248" width="280" height="30" rx="15" fill="rgba(28,26,25,0.72)" />
+  <text x="200" y="268" font-family="Poppins, Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">Chicken Italiaona</text>
+</svg>

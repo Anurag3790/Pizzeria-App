@@ -1,0 +1,127 @@
+<section class="cart-page container">
+  @if (orderPlaced()) {
+    <div class="order-success">
+      <svg viewBox="0 0 52 52" aria-hidden="true">
+        <circle cx="26" cy="26" r="25" fill="none" stroke="var(--color-veg)" stroke-width="2" />
+        <path fill="none" stroke="var(--color-veg)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M14 27l7 7 17-17" />
+      </svg>
+      <h1>Order placed!</h1>
+      <p>Thanks for your order &mdash; total charged was {{ lastOrderTotal() | currency: 'INR' : 'symbol' : '1.2-2' }}. It'll be at your door in about 45 minutes.</p>
+      <button class="btn btn-primary" type="button" (click)="startNewOrder()">Place another order</button>
+    </div>
+  } @else if (cart.items().length === 0) {
+    <div class="empty-cart">
+      <h1>Your cart is empty</h1>
+      <p>Add a pizza from the menu, or build one your own way.</p>
+      <div class="empty-actions">
+        <a class="btn btn-primary" routerLink="/order-pizza">Order Pizza</a>
+        <a class="btn btn-outline" routerLink="/build-pizza">Build Ur Pizza</a>
+      </div>
+    </div>
+  } @else {
+    <h1 class="page-title">Your Cart</h1>
+
+    <div class="cart-layout">
+      <div class="cart-items">
+        @for (item of cart.items(); track item.cartItemId) {
+          <article class="cart-row">
+            @if (item.image) {
+              <img [src]="item.image" [alt]="item.name" loading="lazy" />
+            } @else {
+              <div class="cart-row-icon" aria-hidden="true">🍕</div>
+            }
+
+            <div class="cart-row-info">
+              <h2>{{ item.name }}</h2>
+              @if (item.details) {
+                <p class="cart-row-details">{{ item.details }}</p>
+              }
+              <p class="cart-row-unit">{{ item.unitPrice | currency: 'INR' : 'symbol' : '1.2-2' }} each</p>
+            </div>
+
+            <div class="qty-stepper" [attr.aria-label]="'Quantity for ' + item.name">
+              <button type="button" (click)="decrement(item.cartItemId)" aria-label="Decrease quantity">&minus;</button>
+              <span>{{ item.quantity }}</span>
+              <button type="button" (click)="increment(item.cartItemId)" aria-label="Increase quantity">+</button>
+            </div>
+
+            <div class="cart-row-total">{{ item.unitPrice * item.quantity | currency: 'INR' : 'symbol' : '1.2-2' }}</div>
+
+            <button class="remove-btn" type="button" (click)="remove(item.cartItemId)" [attr.aria-label]="'Remove ' + item.name">
+              &times;
+            </button>
+          </article>
+        }
+      </div>
+
+      <aside class="cart-summary">
+        <h2>Order Summary</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>{{ cart.subtotal() | currency: 'INR' : 'symbol' : '1.2-2' }}</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax (5%)</span>
+          <span>{{ tax() | currency: 'INR' : 'symbol' : '1.2-2' }}</span>
+        </div>
+        <div class="summary-row">
+          <span>Delivery</span>
+          @if (deliveryFee() === 0) {
+            <span class="free-tag">Free</span>
+          } @else {
+            <span>{{ deliveryFee() | currency: 'INR' : 'symbol' : '1.2-2' }}</span>
+          }
+        </div>
+        @if (deliveryFee() > 0) {
+          <p class="free-hint">Add {{ 500 - cart.subtotal() | currency: 'INR' : 'symbol' : '1.0-0' }} more for free delivery.</p>
+        }
+
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <span>{{ grandTotal() | currency: 'INR' : 'symbol' : '1.2-2' }}</span>
+        </div>
+
+        <form class="delivery-form" [formGroup]="deliveryForm" (ngSubmit)="placeOrder()" novalidate>
+          <h3>Delivery details</h3>
+
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" type="text" formControlName="name" autocomplete="name" [class.invalid]="isInvalid('name')" />
+            @if (isInvalid('name')) {
+              <span class="error-text">Enter your name (at least 2 characters).</span>
+            }
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone number</label>
+            <input id="phone" type="tel" formControlName="phone" autocomplete="tel" placeholder="10-digit mobile number" [class.invalid]="isInvalid('phone')" />
+            @if (isInvalid('phone')) {
+              <span class="error-text">Enter a valid 10-digit mobile number.</span>
+            }
+          </div>
+
+          <div class="field">
+            <label for="address">Delivery address</label>
+            <textarea id="address" formControlName="address" autocomplete="street-address" rows="2" [class.invalid]="isInvalid('address')"></textarea>
+            @if (isInvalid('address')) {
+              <span class="error-text">Enter a complete address (at least 10 characters).</span>
+            }
+          </div>
+
+          <div class="field">
+            <label for="pincode">Pincode</label>
+            <input id="pincode" type="text" formControlName="pincode" autocomplete="postal-code" placeholder="6-digit pincode" [class.invalid]="isInvalid('pincode')" />
+            @if (isInvalid('pincode')) {
+              <span class="error-text">Enter a valid 6-digit pincode.</span>
+            }
+          </div>
+
+          <button class="btn btn-primary place-order-btn" type="submit">
+            Place Order &middot; {{ grandTotal() | currency: 'INR' : 'symbol' : '1.2-2' }}
+          </button>
+        </form>
+      </aside>
+    </div>
+  }
+</section>
